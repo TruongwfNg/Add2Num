@@ -13,7 +13,7 @@ const stringNum = (str1n, strn2) => {
   for (i = str1n.length - 1; i >= 0; i--) {
     // kết quả tạm để xét tổng từng cặp số từ phải qua trái
     let tempRs =
-      str1n.charAt(i) * 1 + (strn2.charAt(i + distance) % 10) * 1 + remainder;
+      str1n.charAt(i) * 1 + strn2.charAt(i + distance) * 1 + remainder;
 
     // nếu cặp nào lớn hơn 10 thì tính tổng theo chuỗi và xét số dư để lưu vào carry (số nhớ)
     if (tempRs >= 10) {
@@ -29,4 +29,10 @@ const stringNum = (str1n, strn2) => {
   return sum;
 };
 
-console.log(stringNum(str1, str2));
+if (str1.length >= str2.length) {
+  console.log(stringNum(str1, str2));
+} else {
+  console.log(stringNum(str2, str1));
+}
+
+// console.log(stringNum(str1, str2));
