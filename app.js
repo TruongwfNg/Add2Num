@@ -15,12 +15,12 @@ const stringNum = (str1n, strn2) => {
     let tempRs =
       str1n.charAt(i) * 1 + strn2.charAt(i + distance) * 1 + remainder;
 
-    // nếu cặp nào lớn hơn 10 thì tính tổng theo chuỗi và xét số dư để lưu vào carry (số nhớ)
+    // nếu cặp nào lớn hơn 10 thì tính tổng theo chuỗi và xét số dư để lưu vào remainder (số dư)
     if (tempRs >= 10) {
       sum = (tempRs % 10) + sum;
       remainder = Math.floor(tempRs / 10);
     } else {
-      // nếu cặp nào bé hơn 10 thì tính tổng bình thường và set carry là 0 (số nhớ)
+      // nếu cặp nào bé hơn 10 thì tính tổng bình thường và set remainder là 0 (số dư)
       sum = tempRs + sum;
       remainder = 0;
     }
